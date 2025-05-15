@@ -1,0 +1,29 @@
+{
+    "name": "nodejs-vscode-debug-boilerplate",
+    "version": "1.0.0",
+    "description": "Node.js project with VSCode debugging configuration",
+    "main": "src/index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js",
+        "debug": "node --inspect-brk src/index.js",
+        "debug:watch": "nodemon --inspect src/index.js",
+        "test": "mocha tests/**/*.js",
+        "test:watch": "nodemon --exec npm test"
+    },
+    "keywords": [
+        "nodejs",
+        "vscode",
+        "debugging"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "mocha": "^10.2.0"
+    },
+    "dependencies": {
+        "lodash.isequal": "^4.5.0",
+        "nodemon": "^3.1.10"
+    }
+}

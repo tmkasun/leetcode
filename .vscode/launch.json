@@ -1,0 +1,67 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/src/index.js",
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "runtimeArgs": ["--experimental-modules"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Current File",
+      "program": "${file}",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--experimental-modules"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Tests",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--timeout",
+        "999999",
+        "${workspaceFolder}/tests/**/*.js",
+        "--experimental-modules"
+      ],
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Nodemon",
+      "port": 9229,
+      "restart": true,
+      "protocol": "inspector"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug with Nodemon",
+      "runtimeExecutable": "nodemon",
+      "program": "${workspaceFolder}/src/index.js",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--experimental-modules"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Current File with Nodemon",
+      "runtimeExecutable": "nodemon",
+      "program": "${file}",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--experimental-modules"]
+    }
+  ]
+}
